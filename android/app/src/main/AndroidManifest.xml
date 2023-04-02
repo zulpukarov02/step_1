@@ -1,9 +1,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.step_1">
-     <!-- internet -->
+    <!-- internet -->
     <uses-permission android:name="android.permission.INTERNET"/>
-     <!-- url_launcher -->
+    <!-- All packages -->
+    <!-- <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" /> -->
+    <!-- url_launcher -->
     <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
         <intent>
             <action android:name="android.intent.action.VIEW" />
             <data android:scheme="sms" />
@@ -12,9 +19,13 @@
             <action android:name="android.intent.action.VIEW" />
             <data android:scheme="tel" />
         </intent>
+          <intent>
+            <action android:name="android.intent.action.SEND" />
+            <data android:mimeType="*/*" />
+        </intent>
     </queries>
    <application
-        android:label="step_1"
+        android:label="step_2"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
